@@ -7,14 +7,10 @@ body {
 }
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 16px;
 }
-@media (max-width: 600px) {
-  .grid-container {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
-}
+
 .card {
   background: #1e1e1e;
   border: 2px solid;
@@ -25,7 +21,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 140px;
+  min-height: 100px;
+  aspect-ratio: 16 / 9;
 }
 .card:hover {
   box-shadow: 0 2px 8px rgba(0,0,0,0.5);

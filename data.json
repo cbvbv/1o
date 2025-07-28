@@ -9,7 +9,7 @@
         {
           "label": "Revision Notes",
           "type": "revision",
-          "target": "revision.html",
+      
           "revision": [
             { "label": "Chapter 1", "url": "https://docs.google.com/document/d/CH1/embed" },
             { "label": "Chapter 2", "url": "https://docs.google.com/document/d/CH2/embed" }
@@ -23,8 +23,7 @@
       "due": 1723122800,
       "urgency":1,
       "text": "Prepare your volcano model and report.",
-      "links": [],
-      "revision": []
+      "links": []
     }
   ]
   
