@@ -18,6 +18,19 @@ function urgencyToColor(urgency) {
   }
 }
 
+function isTodayOrTomorrow(unix) {
+  const due = new Date(unix * 1000);
+  const now = new Date();
+  const tomorrow = new Date();
+  tomorrow.setDate(now.getDate() + 1);
+
+  // Zero out time for comparison
+  due.setHours(0,0,0,0);
+  now.setHours(0,0,0,0);
+  tomorrow.setHours(0,0,0,0);
+
+  return due.getTime() === now.getTime() || due.getTime() === tomorrow.getTime();
+}
 
 async function loadData() {
   const res = await fetch(dataUrl);
@@ -33,9 +46,12 @@ function renderGrid() {
     card.className = 'card';
     card.style.borderColor = urgencyToColor(item.urgency);
     card.innerHTML = `
-      <div class="title">${item.title}</div>
-      <div class="due">${formatDate(item.due)}</div>
-    `;
+  <div class="title">${item.title}</div>
+  <div class="due">
+    ${formatDate(item.due)}
+    ${isTodayOrTomorrow(item.due) ? '<span class="due-alert">!</span>' : ''}
+  </div>
+`;
     card.addEventListener('click', () => openPopup(idx));
     grid.appendChild(card);
   });
@@ -71,5 +87,19 @@ function handleLink(itemId, linkIndex) {
 document.getElementById('close-popup').addEventListener('click', () => {
   document.getElementById('popup-overlay').classList.remove('show');
 });
+
+function updateDateTime() {
+  const days = [
+    "Domingo", "Segunda", "Terça", "Quarta",
+    "Quinta", "Sexta", "Sábado"
+  ];
+  const now = new Date();
+  const dayName = days[now.getDay()];
+  const date = now.toLocaleDateString('pt-BR');
+  const time = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+  document.getElementById('datetime').textContent = `${dayName}, ${date} - ${time}`;
+}
+updateDateTime();
+setInterval(updateDateTime, 1000);
 
 loadData();
