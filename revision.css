@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  background: #121212;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+.rev-container {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+}
+.rev-nav {
+  width: 200px;
+  background: #1e1e1e;
+  border-right: 1px solid #333;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.rev-nav button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+}
+.rev-nav button.active {
+  background: #0056b3;
+}
+.rev-content {
+  flex: 1;
+  background: #1e1e1e;
+}
+#doc-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}

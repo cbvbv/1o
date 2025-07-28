@@ -1,0 +1,30 @@
+[
+    {
+      "id": "hw1",
+      "title": "Math Homework 1",
+      "due": 1722787200,
+      "urgency":2,
+      "text": "Complete exercises 1-10 on page 23.",
+      "links": [
+        {
+          "label": "Revision Notes",
+          "type": "revision",
+          "target": "revision.html",
+          "revision": [
+            { "label": "Chapter 1", "url": "https://docs.google.com/document/d/CH1/embed" },
+            { "label": "Chapter 2", "url": "https://docs.google.com/document/d/CH2/embed" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hw2",
+      "title": "Science Project",
+      "due": 1723122800,
+      "urgency":1,
+      "text": "Prepare your volcano model and report.",
+      "links": [],
+      "revision": []
+    }
+  ]
+  

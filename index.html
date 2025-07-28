@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1o Ano</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Material Dashboard</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p>This is a test of the github web hosting.</p>
+  <div class="grid-container" id="items-grid">
+    <!-- Cards will be injected here -->
+  </div>
+
+  <!-- Popup Overlay -->
+  <div id="popup-overlay">
+    <div id="popup">
+      <button id="close-popup">×</button>
+      <h2 id="popup-title"></h2>
+      <p id="popup-text"></p>
+      <div id="popup-links" class="links">
+        <!-- Buttons injected here -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
