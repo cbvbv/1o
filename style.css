@@ -23,16 +23,17 @@ body {
   justify-content: space-between;
   min-height: 100px;
   aspect-ratio: 16 / 9;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
 }
 .card:hover {
   box-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 .card .title {
   font-weight: bold;
-  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-size: 1.5em;
 }
 .card .due {
-  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-size: 1em;
   color: #ccc;
   text-align: left;
 }
